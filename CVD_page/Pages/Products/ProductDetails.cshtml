@@ -1,0 +1,56 @@
+﻿@page
+@model CVD_page.Pages.Products.ProductDetailsModel
+
+@{
+    ViewData["Title"] = "ProductDetails";
+}
+
+<h1>ProductDetails</h1>
+<div id="Productlist"></div>
+<div>
+    <div class="float-child float-sm-start mb-3" style="width: 60%; background-color: #40E0D0; border: ridge">
+        <h4>Product</h4>
+        <hr />
+    
+        <dl class="row text-black">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product.ItemName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.ItemName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product.OrderNo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.OrderNo)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product.price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product.Desc)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.Desc)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Product.unit)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Product.unit)
+            </dd>
+        </dl>
+    </div>
+    <div class="float-child float-sm-end mb-3" style="width: 40%;background-color: #5ebdf3; border: ridge">
+        <img src="/img/Paceholder1.png" style="width:50%; height:50%;" alt="Placeholder Image" />
+    </div>
+
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Product.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

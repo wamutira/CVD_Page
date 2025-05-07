@@ -1,0 +1,63 @@
+﻿@page
+@model CVD_page.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Product List</h1>
+
+<p>
+    <a asp-page="ProductAdd" class="btn btn-primary"><i class="bi bi-plus-circle"></i> &nbsp; Add new product</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Product)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.unit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @if (Model.Product.IsReadOnly)
+                    {
+                        <a asp-page="./ProductEdit" asp-route-id="@item.Id" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a> 
+                    }|
+
+                    <a asp-page="./ProductDetails" asp-route-id="@item.Id" class="btn btn-outline-info">
+                        Details
+                    </a>
+
+                    |@if (Model.Product.IsReadOnly)
+                    {
+                     <a asp-page = "./DeleteProduct" asp - route - id = "@item.Id" class="btn btn-danger">
+                    <i class="bi bi-trash3"></i>
+                    </a>
+                    }
+            </td>
+        </tr>
+}
+
+    </tbody>
+</table>

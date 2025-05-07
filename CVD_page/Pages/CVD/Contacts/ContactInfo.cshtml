@@ -1,0 +1,25 @@
+﻿@page
+@model CVD_page.Pages.CVD.Contacts.ContactInfoModel
+
+@await Html.PartialAsync("_CVD_Header")
+
+@{
+
+    ViewData["Title"] = "Contact Information";
+    
+
+
+   
+}
+<div class="text-center">
+
+    <h2 class="bg-white">Please Get in touch with us.</h2>
+</div>
+
+
+
+<!-- React container -->
+<div id="contact-root"></div>
+
+<!-- Load React bundle -->
+<script src="~/js/bundle.js"></script>

@@ -1,0 +1,19 @@
+﻿@page
+@model CVD_page.Pages.CVD.Partners.PartnersModel
+
+
+@{
+    
+    ViewData["Title"] = "Our Partners";
+}
+
+@await Html.PartialAsync("_CVD_Header")
+<div class="text-center">
+    <h2 class="bg-white">Our Partners include.</h2>
+</div>
+
+<!-- React container -->
+<div id="partners-root"></div>
+
+<!-- Load React bundle -->
+<script src="~/js/bundle.js"></script>
