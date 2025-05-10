@@ -12,12 +12,7 @@ namespace CVD_page.Pages
             _logger = logger;
         }
 
-        //public void OnGet()
-        //{
-
-        //}
-
-      
+          
 
         public void OnGet(bool _IsReadOnly = false)
         {
